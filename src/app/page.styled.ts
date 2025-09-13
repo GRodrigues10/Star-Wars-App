@@ -5,7 +5,7 @@ export const StylesHome = styled.div`
   background-image: url("/back.png");
   background-position: right;
   background-size: cover;
-  font-family: "Starjedi";
+  
   color: #e5e5e5;
   display: flex;
   justify-content: center;
