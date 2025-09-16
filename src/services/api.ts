@@ -29,3 +29,11 @@ export const fetchDataId = async (id:any) => {
   const response = await data.json();
   return response;
 }
+
+// Função para buscar personagens pelo ID:
+
+export const fetchCharacterId = async (id:any) => {
+    const data = await fetch(`http://localhost:4000/personagens/${id}`);
+    const response = await data.json();
+    return response;
+}
