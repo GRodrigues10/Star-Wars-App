@@ -21,3 +21,11 @@ export const fetchCharacters = async () => {
   const response = await data.json();
   return response;
 }
+
+// Função para buscar filmes pelo ID:
+
+export const fetchDataId = async (id:any) => {
+  const data = await fetch(`http://localhost:4000/data/${id}`);
+  const response = await data.json();
+  return response;
+}

@@ -27,7 +27,7 @@ useEffect(()=>{
         <h1>Personagens</h1>
         <div className="cards">
           {character.map((c:any)=>(
-            <div key={c.id}>
+            <div key={c._id}>
               <img src={c.poster_url} alt="Imagem do personagem" />
               </div>
           ))}

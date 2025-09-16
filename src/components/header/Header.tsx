@@ -1,8 +1,15 @@
 import React from 'react'
 import { StylesHeader } from './Header.styled'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
 
 function Header() {
+    const router = useRouter();
+    const back = () => {
+        router.push('/');
+        // alert('Você saiu com sucesso!');
+    }
   return (
     <StylesHeader>
         <div className="content-section">
@@ -18,7 +25,7 @@ function Header() {
                 <Link href='#' className='link5'>Personagens</Link>
             </div>
             <div className="btn">
-                <button>Sair</button>
+                <button onClick={back}>Sair</button>
             </div>
         </div>
     </StylesHeader>

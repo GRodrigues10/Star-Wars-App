@@ -1,7 +1,12 @@
 import React from "react";
 import { StylesSection1 } from "./Section.styled";
+import { useRouter } from "next/navigation";
 
 function Section1() {
+  const router = useRouter();
+  const moreInformation = () => {
+    router.push('/media/68c21c47a5845876b768a1a8');
+  }
   return (
     <StylesSection1>
       <div className="content-section">
@@ -16,8 +21,8 @@ function Section1() {
                 Sith, o Jedi exilado Obi-Wan...
               </p>
               <div className="btns">
-                <button className="b1">▶ Assistir</button>
-                <button className="b2">Mais Informações</button>
+                <button className="b1"><a href="https://youtu.be/J_1EXWNETiI?si=q6aAkjGFtEARdjPR" target="_blank">▶ Assistir</a></button>
+                <button className="b2" onClick={moreInformation}>Mais Informações</button>
               </div>
           
         </div>
