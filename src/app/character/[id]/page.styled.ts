@@ -4,7 +4,7 @@ interface StylesCharacterProps {
   backdrop?: string;
 }
 
-export const StylesCharacter = styled.div`
+export const StylesCharacter =  styled.div<StylesCharacterProps>`
   width: 100%;
   height: 100vh;
   padding: 20px;
