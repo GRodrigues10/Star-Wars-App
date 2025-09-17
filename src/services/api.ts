@@ -4,7 +4,7 @@ export interface StarDataItem {
   title: string;
   poster_url: string;
   backdrop_url?: string;
-  description?: string; // adicione isso
+  description?: string; 
   trailer_url?: string;
   cast?: string;
   age_rating?: string;
@@ -36,44 +36,66 @@ export interface CharacterDetails {
   apprentices?: string[];
 }
 
+// URL da API direto
+const API_URL = "https://api-star-wars.onrender.com";
+
 // Buscar filmes, séries e documentários por tipo
 export const fetchByType = async (
   types: string | string[]
 ): Promise<StarDataItem[]> => {
-  const res = await fetch("http://localhost:4000/");
-  const data: StarDataItem[] = await res.json();
+  try {
+    const res = await fetch(`${API_URL}/`);
+    const data: StarDataItem[] = await res.json();
 
-  if (Array.isArray(types)) {
-    return data.filter((item) => types.some((t) => item.types.includes(t)));
+    if (Array.isArray(types)) {
+      return data.filter((item) => types.some((t) => item.types.includes(t)));
+    }
+
+    return data.filter((item) => item.types.includes(types));
+  } catch (err) {
+    console.error("Erro ao buscar dados:", err);
+    throw new Error("Erro ao buscar dados");
   }
-
-  return data.filter((item) => item.types.includes(types));
 };
 
 // Buscar lista de personagens
 export const fetchCharacters = async (): Promise<Character[]> => {
-  const res = await fetch("http://localhost:4000/personagens");
-  const data: Character[] = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${API_URL}/personagens`);
+    const data: Character[] = await res.json();
+    return data;
+  } catch (err) {
+    console.error("Erro ao buscar personagens:", err);
+    throw new Error("Erro ao buscar personagens");
+  }
 };
 
 // Buscar filme/série/documentário pelo ID
 export const fetchDataId = async (id: string): Promise<StarDataItem> => {
-  const res = await fetch(`http://localhost:4000/data/${id}`);
-  const data: StarDataItem = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${API_URL}/data/${id}`);
+    const data: StarDataItem = await res.json();
+    return data;
+  } catch (err) {
+    console.error("Erro ao buscar dados por ID:", err);
+    throw new Error("Erro ao buscar dados");
+  }
 };
 
 // Buscar personagem pelo ID (detalhes)
 export const fetchCharacterId = async (
   id: string
 ): Promise<CharacterDetails> => {
-  const res = await fetch(`http://localhost:4000/personagens/${id}`);
-  const data: Character = await res.json();
+  try {
+    const res = await fetch(`${API_URL}/personagens/${id}`);
+    const data: Character = await res.json();
 
-  // Mapeia name para title e mantém os outros campos
-  return {
-    ...data,
-    title: data.name,
-  } as CharacterDetails;
+    return {
+      ...data,
+      title: data.name,
+    } as CharacterDetails;
+  } catch (err) {
+    console.error("Erro ao buscar personagem por ID:", err);
+    throw new Error("Erro ao buscar personagem");
+  }
 };
