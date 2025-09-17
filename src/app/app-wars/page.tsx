@@ -11,7 +11,7 @@ import Section5 from "@/components/section5/Section5";
 import Section6 from "@/components/section6/Section6";
 import Footer from "@/components/footer/Footer";
 
-function page() {
+function Page() {
   return (
     <StylesAppWars>
       {Array.from({ length: 100 }).map((_, i) => (
@@ -29,4 +29,4 @@ function page() {
   );
 }
 
-export default page;
+export default Page;

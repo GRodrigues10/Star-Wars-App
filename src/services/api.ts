@@ -1,39 +1,79 @@
-// Função para buscar filmes, séries e documentários.
-export const fetchByType = async (types: string | string[]) => {
-  const data = await fetch("http://localhost:4000/");
-  const response = await data.json();
+// Interfaces
+export interface StarDataItem {
+  _id: string;
+  title: string;
+  poster_url: string;
+  backdrop_url?: string;
+  description?: string; // adicione isso
+  trailer_url?: string;
+  cast?: string;
+  age_rating?: string;
+  duration?: string;
+  seasons?: number;
+  year?: number;
+  types: string[];
+}
+
+export interface Character {
+  _id: string;
+  name: string;
+  poster_url: string;
+  backdrop_url?: string;
+  description?: string;
+  age?: number;
+  side?: string;
+  apprentices?: string[];
+}
+
+export interface CharacterDetails {
+  _id: string;
+  title: string;
+  poster_url: string;
+  backdrop_url?: string;
+  description?: string;
+  age?: number;
+  side?: string;
+  apprentices?: string[];
+}
+
+// Buscar filmes, séries e documentários por tipo
+export const fetchByType = async (
+  types: string | string[]
+): Promise<StarDataItem[]> => {
+  const res = await fetch("http://localhost:4000/");
+  const data: StarDataItem[] = await res.json();
 
   if (Array.isArray(types)) {
-    // filtra se qualquer tipo estiver presente no card
-    return response.filter((card: any) =>
-      types.some((t) => card.types.includes(t))
-    );
+    return data.filter((item) => types.some((t) => item.types.includes(t)));
   }
 
-  // caso seja apenas um tipo
-  return response.filter((card: any) => card.types.includes(types));
+  return data.filter((item) => item.types.includes(types));
 };
 
+// Buscar lista de personagens
+export const fetchCharacters = async (): Promise<Character[]> => {
+  const res = await fetch("http://localhost:4000/personagens");
+  const data: Character[] = await res.json();
+  return data;
+};
 
-// Função para buscar personagens
-export const fetchCharacters = async () => {
-  const data = await fetch('http://localhost:4000/personagens');
-  const response = await data.json();
-  return response;
-}
+// Buscar filme/série/documentário pelo ID
+export const fetchDataId = async (id: string): Promise<StarDataItem> => {
+  const res = await fetch(`http://localhost:4000/data/${id}`);
+  const data: StarDataItem = await res.json();
+  return data;
+};
 
-// Função para buscar filmes pelo ID:
+// Buscar personagem pelo ID (detalhes)
+export const fetchCharacterId = async (
+  id: string
+): Promise<CharacterDetails> => {
+  const res = await fetch(`http://localhost:4000/personagens/${id}`);
+  const data: Character = await res.json();
 
-export const fetchDataId = async (id:any) => {
-  const data = await fetch(`http://localhost:4000/data/${id}`);
-  const response = await data.json();
-  return response;
-}
-
-// Função para buscar personagens pelo ID:
-
-export const fetchCharacterId = async (id:any) => {
-    const data = await fetch(`http://localhost:4000/personagens/${id}`);
-    const response = await data.json();
-    return response;
-}
+  // Mapeia name para title e mantém os outros campos
+  return {
+    ...data,
+    title: data.name,
+  } as CharacterDetails;
+};

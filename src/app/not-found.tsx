@@ -3,7 +3,7 @@ import React from "react";
 import { StylesNotFound } from "./not-found.styled";
 import { useRouter } from "next/navigation";
 
-function page() {
+function NotFoundPage() {
     const router = useRouter();
     const back = () => {
         router.push('/app-wars');
@@ -29,4 +29,4 @@ function page() {
   );
 }
 
-export default page;
+export default NotFoundPage;

@@ -1,58 +1,61 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { StylesCharacter } from "./page.styled";
-import { fetchCharacterId } from "@/services/api";
+import { fetchCharacterId, CharacterDetails } from "@/services/api";
 import { useParams, useRouter } from "next/navigation";
 
-function Page() {
-  const [character, setCharacter] = useState<any>(null);
+export default function CharacterPage() {
+  const [character, setCharacter] = useState<CharacterDetails | null>(null);
   const params = useParams(); // pega o [id] da rota
-  //   const router = useRouter();
-
-  const fetchCharacterDetails = async () => {
-    if (!params?.id) return;
-    const data = await fetchCharacterId(params.id);
-    setCharacter(data);
-  };
-
-  //   const goToCharacter = (id: string) => {
-  //     router.push(`/character/${id}`);
-  //   };
-
-  useEffect(() => {
-    fetchCharacterDetails();
-  }, [params?.id]);
   const router = useRouter();
+
+  const characterId = Array.isArray(params?.id) ? params.id[0] : params?.id;
+
   const back = () => {
     router.push("/app-wars");
   };
 
-  if (!character) return <p>Carregando...</p>;
+  const fetchCharacterDetails = async () => {
+    if (!characterId) return;
+    const data = await fetchCharacterId(characterId);
+    setCharacter(data);
+  };
+
+  useEffect(() => {
+    fetchCharacterDetails();
+  }, [characterId]);
+
+  if (!character)
+    return (
+      <div className="flex items-center justify-center h-screen bg-black">
+        <div className="flex flex-col items-center">
+          <div className="w-12 h-12 border-4 border-t-transparent border-white rounded-full animate-spin"></div>
+        </div>
+      </div>
+    );
 
   return (
-    <StylesCharacter backdrop={character.backdrop_url}>
+    <StylesCharacter backdrop={character.backdrop_url ?? ""}>
       <div className="content-section">
         <h1 className="logo" onClick={back}>
           SW
         </h1>
         <div className="character-text">
-          <h1>{character.name}</h1>
+          <h1>{character.title || "Sem nome"}</h1>
           <div className="details-text">
-            <p className="text">{character.description}</p>
+            <p className="text">{character.description ?? "Sem descrição"}</p>
             <p>
-              <strong>Idade:</strong> {character.age}.
+              <strong>Idade:</strong> {character.age ?? "Desconhecida"}.
             </p>
             <p>
-              <strong>Aliança:</strong> {character.side}.
+              <strong>Aliança:</strong> {character.side ?? "Desconhecida"}.
             </p>
             <p>
-              <p>
-                <strong>Aprendizes:</strong>{" "}
-                {character.apprentices && character.apprentices.length > 0
-                  ? character.apprentices.join(", ")
-                  : "Nenhum"}
-                .
-              </p>
+              <strong>Aprendizes:</strong>{" "}
+              {character.apprentices && character.apprentices.length > 0
+                ? character.apprentices.join(", ")
+                : "Nenhum"}
+              .
             </p>
           </div>
         </div>
@@ -60,5 +63,3 @@ function Page() {
     </StylesCharacter>
   );
 }
-
-export default Page;

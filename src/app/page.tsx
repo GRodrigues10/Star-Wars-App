@@ -6,6 +6,9 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const register = () => {
+    router.push('/register');
+  }
   const router = useRouter();
   const login = () => {
     if (!user.trim() || !password.trim()) {
@@ -39,7 +42,7 @@ export default function Home() {
           />
           <button onClick={login}>Login</button>
           <p className="account">
-            Ainda não tem conta? <span>Cadastrar</span>
+            Ainda não tem conta? <span onClick={register}>Cadastrar</span>
           </p>
         </div>
       </div>

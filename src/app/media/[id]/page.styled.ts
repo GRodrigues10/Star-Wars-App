@@ -99,6 +99,11 @@ export const StylesPage = styled.div<StylesPageProps>`
     margin-top: 30px;
   }
 
+
+
+
+
+
   @media screen and (min-width: 530px) {
     .content-section .logo {
       font-size: 2.7rem;

@@ -63,7 +63,7 @@ export const StylesFooter = styled.footer`
 
   .text p {
     color: #ccc;
-  font-family: 'Poppins' ;
+  font-family: 'StarJhol' ;
   font-weight: bold;
 
   }
@@ -96,7 +96,7 @@ export const StylesFooter = styled.footer`
     }
   }
 
-   @media screen and (min-width: 768px) {
+   @media screen and (min-width: 992px) {
     .social-medias svg {
       font-size: 2.5rem;
     }
@@ -106,12 +106,12 @@ export const StylesFooter = styled.footer`
     }
 
     .text {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       gap: 30px;
     }
   }
 
-     @media screen and (min-width: 768px) {
+     @media screen and (min-width: 1200px) {
     .social-medias svg {
       font-size: 2.5rem;
     }
@@ -121,7 +121,7 @@ export const StylesFooter = styled.footer`
     }
 
     .text {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       gap: 30px;
     }
   }
