@@ -21,7 +21,7 @@ function Section1() {
                 Sith, o Jedi exilado Obi-Wan...
               </p>
               <div className="btns">
-                <button className="b1"><a href="https://youtu.be/J_1EXWNETiI?si=q6aAkjGFtEARdjPR" target="_blank">▶ Assistir</a></button>
+                <button className="b1"><a href="https://youtu.be/3Yh_6_zItPU?si=iUNm452DxLkKZgOb" target="_blank">▶ Assistir</a></button>
                 <button className="b2" onClick={moreInformation}>Mais Informações</button>
               </div>
           
