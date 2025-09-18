@@ -1,7 +1,6 @@
 import React from "react";
 import { StylesFooter } from "./Footer.styled";
-import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
-import {X} from 'lucide-react'
+import { FaInstagram, FaYoutube, FaFacebook, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 
 function Footer() {
@@ -19,7 +18,7 @@ function Footer() {
             <FaFacebook />
           </Link>
           <Link href="https://x.com/starwars/" target="_blank">
-            <X />
+            <FaTwitter/>
           </Link>
         </div>
         <div className="text">
