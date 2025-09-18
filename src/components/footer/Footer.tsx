@@ -1,6 +1,6 @@
 import React from "react";
 import { StylesFooter } from "./Footer.styled";
-import { FaInstagram, FaYoutube, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaFacebook, FaTwitter } from "react-icons/fa";
 import Link from "next/link";
 
 function Footer() {
@@ -16,6 +16,9 @@ function Footer() {
           </Link>
           <Link href="https://www.facebook.com/StarWars/" target="_blank">
             <FaFacebook />
+          </Link>
+          <Link href="https://x.com/starwars/" target="_blank">
+            <FaTwitter />
           </Link>
         </div>
         <div className="text">
