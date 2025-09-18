@@ -1,5 +1,4 @@
 "use client";
-import React, { useEffect } from "react";
 
 import { StylesAppWars } from "./page.styled";
 import Header from "@/components/header/Header";
@@ -24,7 +23,7 @@ function Page() {
       <Section4 />
       <Section5 />
       <Section6 />
-      <Footer/>
+      <Footer />
     </StylesAppWars>
   );
 }
