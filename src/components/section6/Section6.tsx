@@ -21,7 +21,7 @@ export default function Section6() {
   }, []);
 
   return (
-    <StylesSection6>
+    <StylesSection6 id="personagens">
       <div className="content-section">
         <h1>Personagens</h1>
         <div className="cards">

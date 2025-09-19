@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const StylesHeader = styled.div`
+export const StylesHeader = styled.div<{ menuOpen?: boolean }>`
   width: 100%;
   height: 100px;
   background-color: transparent;
+
   .content-section {
     display: flex;
     align-items: center;
@@ -17,16 +18,20 @@ export const StylesHeader = styled.div`
     font-family: "StarJhol";
     color: #00cfff;
     font-size: 1.8rem;
-      cursor: pointer;
+    cursor: pointer;
   }
 
-  .content-section .menu-mobile p {
-    font-size: 1.4rem;
+  .content-section .menu-mobile {
+    display: flex;
+    align-items: center;
     cursor: pointer;
-    transition: .4s ease;
-    &:hover {
-      color: #00cfff;
-      text-shadow: 0 0 10px #00cfff, 0 0 20px #00cfff, 0 0 30px #00cfff;
+    p {
+      font-size: 1.4rem;
+      transition: 0.4s ease;
+      &:hover {
+        color: #00cfff;
+        text-shadow: 0 0 10px #00cfff, 0 0 20px #00cfff, 0 0 30px #00cfff;
+      }
     }
   }
 
@@ -38,11 +43,61 @@ export const StylesHeader = styled.div`
     display: none;
   }
 
+  /* Menu lateral mobile */
+  .mobile-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* abre da esquerda */
+    width: 100%;
+    height: 100vh;
+    background-color: #000d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: 0.3s ease;
+    z-index: 200;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      a {
+        color: white;
+        font-size: 2rem;
+        text-decoration: none;
+        transition: 0.3s ease;
+        &:hover {
+          color: #00cfff;
+        }
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 2.5rem;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        color: #00cfff;
+      }
+    }
+  }
+
+  .mobile-sidebar.open {
+    left: 0;
+  }
+
   @media screen and (min-width: 530px) {
     .content-section h1 {
       font-size: 1.9rem;
     }
-
     .content-section .menu-mobile p {
       font-size: 1.5rem;
     }
@@ -51,51 +106,25 @@ export const StylesHeader = styled.div`
   @media screen and (min-width: 768px) {
     .content-section h1 {
       font-size: 2.1rem;
-    
     }
 
-    .content-section .menu-mobile p {
+    .content-section .menu-mobile {
       display: none;
     }
+
     .content-section .menu-desktop {
-      width: 100%;
       display: flex;
+      width: 100%;
       gap: 20px;
       padding-left: 40px;
       font-size: 1rem;
       align-items: start;
       justify-content: flex-start;
+      cursor: pointer;
     }
 
-    .content-section .menu-desktop .link1 {
-        transition: .4s ease;
-      &:hover {
-        color: #00cfff;
-      }
-    }
-    .content-section .menu-desktop .link2 {
-        transition: .4s ease;
-      &:hover {
-        color: #00cfff;
-      }
-    }
-
-    .content-section .menu-desktop .link3 {
-        transition: .4s ease;
-      &:hover {
-        color: #00cfff;
-      }
-    }
-
-    .content-section .menu-desktop .link4 {
-        transition: .4s ease;
-      &:hover {
-        color: #00cfff;
-      }
-    }
-
-    .content-section .menu-desktop .link5 {
-        transition: .4s ease;
+    .content-section .menu-desktop a {
+      transition: 0.4s ease;
       &:hover {
         color: #00cfff;
       }
@@ -126,11 +155,10 @@ export const StylesHeader = styled.div`
     .content-section h1 {
       font-size: 2.2rem;
     }
-  .content-section .btn button{
- width: 80px;
+    .content-section .btn button {
+      width: 80px;
       margin-left: 0px;
-}
-    
+    }
   }
 
   @media screen and (min-width: 1200px) {
@@ -140,7 +168,6 @@ export const StylesHeader = styled.div`
     .content-section .menu-desktop {
       font-size: 1.3rem;
     }
-
     .content-section .btn button {
       font-size: 1.3rem;
       width: 100px;

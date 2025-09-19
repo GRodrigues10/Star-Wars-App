@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StylesSection6 = styled.div`
+
   width: 100%;
   min-height: 100vh;
   padding: 40px 30px;

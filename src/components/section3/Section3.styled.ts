@@ -1,6 +1,6 @@
 import styled from "styled-components";
 export const StylesSection3 = styled.div`
-
+  padding-top:10px;
   color: white;
 
   .content-section {

@@ -19,7 +19,7 @@ const Section3: React.FC = () => {
   };
 
   return (
-    <StylesSection3>
+    <StylesSection3 id="filmes">
       <div className="content-section">
         <h2><span>Filmes</span> Star Wars</h2>
 

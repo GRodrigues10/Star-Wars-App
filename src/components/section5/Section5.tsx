@@ -19,7 +19,7 @@ const Section5: React.FC = () => {
   };
 
   return (
-    <StylesSection5>
+    <StylesSection5 id="documentarios">
       <div className="content-section">
         <h2><span>Documentários</span> Star Wars</h2>
 

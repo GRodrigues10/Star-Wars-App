@@ -3,10 +3,7 @@ import styled from "styled-components";
 export const StylesDataCard = styled.div`
   margin-top: 20px;
 
-
-
   .content-section {
-   
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -32,7 +29,6 @@ export const StylesDataCard = styled.div`
     will-change: transform, box-shadow;
     transform: translateZ(0);
     backface-visibility: hidden;
-
   }
 
   .card img {
