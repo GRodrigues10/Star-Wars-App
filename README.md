@@ -35,9 +35,9 @@ O projeto é dividido em duas partes:
 
 ## ⚙️ Como rodar o projeto
 
-### 1. Clone este repositório
 ```bash
-git clone https://github.com/seu-usuario/starapp.git
+# 1. Clone este repositório
+ git clone https://github.com/seu-usuario/starapp.git
 
 # 2. Acesse a pasta do projeto
 cd star-wars-app
