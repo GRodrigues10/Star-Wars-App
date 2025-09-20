@@ -13,7 +13,6 @@ O projeto é dividido em duas partes:
 
 ### Frontend
 - [Next.js](https://nextjs.org/)  
-- [React](https://react.dev/)  
 - [styled-components](https://styled-components.com/)  
 - LocalStorage (persistência simples de usuários)  
 
