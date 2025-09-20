@@ -106,6 +106,28 @@ export const StylesHome = styled.div`
     outline: none;
   }
 
+  /* wrapper para o input de senha com macaquinho */
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* espaço pro macaquinho */
+  }
+
+  .toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
+  }
+
   button {
     width: 100%;
     max-width: 220px;
@@ -141,6 +163,9 @@ export const StylesHome = styled.div`
       font-size: 1.3rem;
       max-width: 300px;
     }
+    .input-wrapper {
+      max-width: 300px;
+    }
     button {
       font-size: 1.3rem;
       max-width: 290px;
@@ -161,6 +186,9 @@ export const StylesHome = styled.div`
       font-size: 1.4rem;
       max-width: 340px;
     }
+    .input-wrapper {
+      max-width: 340px;
+    }
     button {
       font-size: 1.4rem;
       max-width: 330px;
@@ -177,6 +205,9 @@ export const StylesHome = styled.div`
 
     input {
       font-size: 1.4rem;
+      max-width: 360px;
+    }
+    .input-wrapper {
       max-width: 360px;
     }
     button {

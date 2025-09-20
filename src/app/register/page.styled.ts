@@ -63,11 +63,11 @@ export const StylesRegister = styled.div`
     font-size: 2rem;
     font-family: "Starjhol";
   }
-    p {
+
+  p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    text-align:center;
-
+    text-align: center;
     color: #e5e5e5;
 
     span {
@@ -91,6 +91,7 @@ export const StylesRegister = styled.div`
     justify-content: center;
   }
 
+  /* estilo base para todos os inputs */
   input {
     width: 100%;
     background: transparent;
@@ -101,6 +102,28 @@ export const StylesRegister = styled.div`
     max-width: 250px;
     color: #00cfff;
     outline: none;
+  }
+
+  /* wrapper para inputs com ícone (🙈/🙉) */
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 250px; /* mesmo do input */
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding-right: 40px; /* espaço pro macaquinho */
+  }
+
+  .toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 20px;
+    user-select: none;
   }
 
   button {
@@ -127,12 +150,12 @@ export const StylesRegister = styled.div`
     h1 {
       font-size: 2.1rem;
     }
-    p{
-      font-size:1.2rem
+    p {
+      font-size: 1.2rem;
     }
 
-    input {
-      font-size: 1rem;
+    input,
+    .input-wrapper {
       max-width: 260px;
     }
 
@@ -145,11 +168,12 @@ export const StylesRegister = styled.div`
     h1 {
       font-size: 2.3rem;
     }
-     p{
-      font-size:1.3rem
+    p {
+      font-size: 1.3rem;
     }
 
-    input {
+    input,
+    .input-wrapper {
       font-size: 1.1rem;
       max-width: 260px;
     }
@@ -164,11 +188,12 @@ export const StylesRegister = styled.div`
     h1 {
       font-size: 2.5rem;
     }
-      p{
-      font-size:1.4rem
+    p {
+      font-size: 1.4rem;
     }
 
-    input {
+    input,
+    .input-wrapper {
       font-size: 1.1rem;
       max-width: 260px;
     }
@@ -183,11 +208,12 @@ export const StylesRegister = styled.div`
     h1 {
       font-size: 4rem;
     }
-      p{
-      font-size:1.5rem
+    p {
+      font-size: 1.5rem;
     }
 
-    input {
+    input,
+    .input-wrapper {
       font-size: 1.4rem;
       max-width: 360px;
     }
