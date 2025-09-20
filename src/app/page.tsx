@@ -59,7 +59,7 @@ export default function Home() {
               className="toggle-icon"
               onClick={() => setShowPassword(!showPassword)}
             >
-              {showPassword ? "🐵" : "🙈"}
+              {showPassword ? "🙉" : "🙈"}
             </span>
           </div>
 
