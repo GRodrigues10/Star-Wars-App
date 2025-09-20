@@ -12,26 +12,24 @@ O projeto é dividido em duas partes:
 ## 🚀 Tecnologias
 
 ### Frontend
-- [Next.js](https://nextjs.org/)  
-- [styled-components](https://styled-components.com/)  
-- LocalStorage (persistência simples de usuários)  
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white) [Next.js](https://nextjs.org/)  
+- ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?logo=styled-components&logoColor=white) [styled-components](https://styled-components.com/)  
+- 🗄️ LocalStorage (persistência simples de usuários)  
 
 ### Backend
-- [Node.js](https://nodejs.org/)  
-- [Express](https://expressjs.com/)  
-- [MongoDB ou PostgreSQL] *(dependendo do que você usou, só trocar aqui)*  
-- API REST construída para retornar dados dos filmes  
+- ![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white) [Node.js](https://nodejs.org/)  
+- ![Express](https://img.shields.io/badge/Express-000000?logo=express&logoColor=white) [Express](https://expressjs.com/)  
+- ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white) [MongoDB](https://www.mongodb.com/)  
+- 🖥️ API REST construída para retornar dados dos filmes (testada com **Insomnia** 🧪)
+
 
 ---
 
 ## 📸 Funcionalidades
 
-✅ Tela de **Login** e **Cadastro** com validação e persistência de dados.  
-✅ Senha com alternância **🙈 / 🙉** para exibir/ocultar no input.  
-✅ Fundo animado com **estrelas em movimento**.  
-✅ Consumo da **API StarApp** para listar filmes.  
+✅ Tela de **Login** e **Cadastro** com validação e persistência de dados.   
+✅ Consumo de **API** para listar conteúdos.  
 ✅ Interface responsiva e moderna.  
-✅ Estrutura para expansão (abas de planetas, personagens, séries etc).  
 
 ---
 
