@@ -1,6 +1,6 @@
 # 🌌 StarApp
 
-O **StarApp** é uma enciclopédia online de **Star Wars**, desenvolvida como projeto **full stack**. Ele reúne informações sobre filmes, séries, documentários e conteúdos expandidos do universo criado por George Lucas.
+O **StarApp** é uma enciclopédia online de **Star Wars**, desenvolvida como projeto **full stack**. Ele reúne informações sobre filmes, séries, documentários e personagens do universo criado por George Lucas.
 
 O projeto é dividido em duas partes:  
 - **Frontend (Next.js/React)** → Interface com autenticação, cadastro e navegação imersiva.  
