@@ -100,7 +100,10 @@ export default function MediaPage() {
                 <p>{details.year ?? "2005"}</p>
                 <p>{details.age_rating ?? "Livre"}</p>
                 <p>
-                  {details.duration ?? (details.seasons ? "Temporadas: " + details.seasons : "N/A")}
+                  {details.duration ??
+                    (details.seasons
+                      ? "Temporadas: " + details.seasons
+                      : "N/A")}
                 </p>
               </div>
 
@@ -116,8 +119,20 @@ export default function MediaPage() {
 
               <div className="media-btns">
                 {details.trailer_url && (
-                  <button className="b1">
-                    <a href={details.trailer_url} target="_blank" rel="noreferrer">
+                  <button
+                    className="b1"
+                    onClick={(e) => {
+                      if (!details.trailer_url) {
+                        e.preventDefault(); // impede abrir link vazio
+                        alert("Trailer indisponível");
+                      }
+                    }}
+                  >
+                    <a
+                      href={details.trailer_url ?? "#"}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       ▶ Assistir
                     </a>
                   </button>
@@ -128,7 +143,11 @@ export default function MediaPage() {
               {details.cast && (
                 <div className="media-casting">
                   <h3>Elenco:</h3>
-                  <p>{details.cast.length > 60 ? details.cast.slice(0, 60) + "..." : details.cast}</p>
+                  <p>
+                    {details.cast.length > 60
+                      ? details.cast.slice(0, 60) + "..."
+                      : details.cast}
+                  </p>
                 </div>
               )}
             </div>
