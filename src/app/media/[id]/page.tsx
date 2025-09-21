@@ -118,23 +118,19 @@ export default function MediaPage() {
               </div>
 
               <div className="media-btns">
-                {details.trailer_url && (
+                {details.trailer_url ? (
                   <button
                     className="b1"
-                    onClick={(e) => {
-                      if (!details.trailer_url) {
-                        e.preventDefault(); // impede abrir link vazio
-                        alert("Trailer indisponível");
-                      }
-                    }}
+                    onClick={() => window.open(details.trailer_url, "_blank")}
                   >
-                    <a
-                      href={details.trailer_url ?? "#"}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      ▶ Assistir
-                    </a>
+                    ▶ Assistir
+                  </button>
+                ) : (
+                  <button
+                    className="b1"
+                    onClick={() => alert("Trailer indisponível")}
+                  >
+                    ▶ Assistir
                   </button>
                 )}
                 <button className="b2">Mais Informações</button>
