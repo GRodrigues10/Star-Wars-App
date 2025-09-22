@@ -33,6 +33,45 @@ O projeto é dividido em duas partes:
 
 ---
 
+## Imagens do Projeto
+
+### Tela Inicial
+
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/246d2034-4e65-4e3c-8851-02df472706d4" />
+
+### Tela de Cadastro
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/00f86633-e497-4a1c-86da-f1ee5a9b7636" />
+
+### Tela Incial
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/9dc79e98-d9cb-4bcc-9310-0753f64036e1" />
+
+---
+
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/05a0788c-1e27-4ab1-a7c4-7bbe2e0fb7a1" />
+
+---
+
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/f024a638-5ce5-46b7-8652-d69cfd01dee3" />
+
+---
+
+### Tela de Detalhes (Filmes, séries e documentários)
+
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/03043124-5e77-47a7-99c0-cca0bb6ce5c7" />
+
+### Tela de Detalhes (Personagens)
+
+<img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/7ec54453-23f2-4a5f-b62b-ff5501f0edac" />
+
+
+
+
+
+
+
+
+
+
 ## ⚙️ Como rodar o projeto
 
 ```bash
