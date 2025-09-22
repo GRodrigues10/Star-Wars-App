@@ -68,6 +68,7 @@ export const StylesHeader = styled.div<{ menuOpen?: boolean }>`
         font-size: 2rem;
         text-decoration: none;
         transition: 0.3s ease;
+        cursor: pointer;
         &:hover {
           color: #00cfff;
         }
