@@ -63,6 +63,10 @@ O projeto é dividido em duas partes:
 
 <img width="100%" height="100%" alt="image" src="https://github.com/user-attachments/assets/7ec54453-23f2-4a5f-b62b-ff5501f0edac" />
 
+## 📌 Aviso de Direitos Autorais
+Todo o material referenciado neste projeto (filmes, séries, personagens, imagens, trailers etc.) pertence aos seus respectivos donos, como **Lucasfilm/Disney**.  
+Este projeto é **apenas para fins de estudo** e não possui finalidade comercial.
+
 
 
 
