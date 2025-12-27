@@ -37,7 +37,7 @@ export interface CharacterDetails {
 }
 
 // URL da API direto
-const API_URL = "https://api-star-wars-tl0s.onrender.com";
+const API_URL = "https://api-star-wars.onrender.com";
 
 // Buscar filmes, séries e documentários por tipo
 export const fetchByType = async (
